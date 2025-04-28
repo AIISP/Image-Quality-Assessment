@@ -1,97 +1,96 @@
-# Awesome Image Quality Assessment 
+# IQA Datasets Information
 
+Image Quality Assessment (IQA) can be categorized into Full Reference (FR), Reduced Reference (RR), and No Reference (NR).
 
-## 1、IQA dataset
-| Dataset Name       | Type | Published | Website                                                                 | Images       | Annotations                   |
-|---------------------|------|-----------|-------------------------------------------------------------------------|--------------|-------------------------------|
-| UHD-IQA            | NR   | 2024      | [Project](https://database.mmsp-kn.de/uhd-iqa-benchmark-database.html) | 6k (4K)      | 20 ratings per image          |
-| AGIQA-3k           | NR   | 2023      | [GitHub](https://github.com/lcysyzxdxc/AGIQA-3k-Database)              | 3k           | Multi-dimensional annotations|
-| SPAQ               | NR   | 2020      | [GitHub](https://github.com/h4nwei/SPAQ)                                | 11k          | Smartphone photography metrics|
-| KonIQ-10k          | NR   | 2020      | [Project](http://database.mmsp-kn.de/koniq-10k-database.html)         | 10k          | 1.2M MOS ratings              |
-| PIPAL              | FR   | 2020      | [Project](https://www.jasongt.com/projectpages/pipal.html)             | 250 ref      | 1.13M pairwise comparisons    |
-| KADID-10k          | FR   | 2019      | [Project](http://database.mmsp-kn.de/kadid-10k-database.html)          | 81 ref       | 10k distortions               |
-| LIVE IQA           | FR   | 2006      | [Project](https://live.ece.utexas.edu/research/Quality/subjective.htm)| 29 ref       | 780 distortions               |
+**Full Reference (FR)**: In FR problems, both the distorted image and the undistorted reference image are provided.
 
+**Reduced Reference (RR)**: In RR problems, the distorted image is provided, but there is no reference image. However, partial information about the reference image is given, which depends on the algorithm you use. RR algorithms are useful in real-time systems. The working principle of RR is illustrated in the diagram below.
 
----
+**No Reference (NR)**: In NR problems, only the distorted image is provided. NR is the most challenging method for image quality assessment.
 
-## 2、dataset
+## No Reference (NR) Datasets
+| Dataset Name       | Type         | Published      | Website                                | Images                          | Annotations               | 
+|--------------------|--------------|----------------|---------------------------------------|---------------------------------|--------------------------|
+| **BRISQUE**        | NR           | IEEE TIP 2012  | [Project](https://live.ece.utexas.edu/research/Quality/index_algorithms.htm) | 10k from YFCC100M          | 1.2M ratings               |
+| **IL-NIQE**        | NR           | IEEE TIP 2015  | [Project](http://www4.comp.polyu.edu.hk/~cslzhang/IQA/ILNIQE/ILNIQE.htm) | 20 pristine images           | Traditional feature-based  |
+| **FRIQUEE**        | NR           | JoV 2017       | [Project](https://live.ece.utexas.edu/research/Quality/index_algorithms.htm) | 140k pristine               | Bag of Features approach   |
+| **HIQA**           | NR           | IEEE CVPR 2018 | [Project](https://kwanyeelin.github.io/projects/HIQA/HIQA.html)         | 10k distorted               | Adversarial learning       |
+| **LIVEMD**         | NR           | ACSSC 2012     | [Project](https://live.ece.utexas.edu/research/Quality/live_multidistortedimage.html) | 15 pristine                  | Two successive distortions |
+| **ADB**            | NR/Aesthetic | ECCV 2016      | [GitHub](https://github.com/aimerykong/deepImageAestheticsAnalysis)      | 10k images (8500/500/1000)  | 11 attributes              |
+| **AV**             | NR/Aesthetic | CVPR 2012      | [Project](https://live.ece.utexas.edu/research/ChallengeDB/index.html)   | 250k (60 categories)        | ---                        |
+| **CLIVE**          | NR           | TIP 2016       | [Project](https://live.ece.utexas.edu/research/ChallengeDB/index.html)   | 1200 images                  | 350k ratings               |
+| **KonIQ-10k**      | NR           | TIP 2020       | [Project](http://database.mmsp-kn.de/koniq-10k-database.html)           | 10k from YFCC100M           | 1.2M annotations           |
+| **SPAQ**           | NR           | CVPR 2020      | [GitHub](https://github.com/h4nwei/SPAQ)                                | 11k smartphone images       | ---                        |
+| **PaQ-2-PiQ**      | NR           | CVPR 2020      | [GitHub](https://github.com/baidut/PaQ-2-PiQ)                            | 40k images, 120k patches    | 4M ratings                 |
+| **UHD-IQA**        | NR           | ECCVW 2024     | [Project](https://database.mmsp-kn.de/uhd-iqa-benchmark-database.html)  | 6k (3840x2160)              | 20 ratings per image       |
 
-| Dataset Name       | Type | Published | Website                                                                 | Images       | Annotations       |
-|---------------------|------|-----------|-------------------------------------------------------------------------|--------------|-------------------|
-| BAPPS (LPIPS)      | FR   | 2018      | [Project](https://richzhang.github.io/PerceptualSimilarity/)           | 187.7k       | 484k comparisons  |
-| PieAPP             | FR   | 2018      | [Project](http://civc.ucsb.edu/graphics/Papers/CVPR2018_PieAPP/)       | 200 ref      | 2.3M rankings     |
-
-
----
-
-## 3、medical dataset
-
-| Dataset Name       | Type | Published | Description                                                                 |
-|---------------------|------|-----------|-----------------------------------------------------------------------------|
-| FOCUS-MUSE DWI     | NR   | 2025      | MRI直肠癌影像质量评估，含深度学习重建技术验证数据 [10](@ref)                     |
-
-
----
-
-## 4、other dataset
-
-| Dataset Name       | Type | Published | Highlights                                                                 |
-|---------------------|------|-----------|-----------------------------------------------------------------------------|
-| ESIQA              | NR   | 2024      | 苹果Vision Pro头显空间影像质量评估 [13](@ref)                                    |
-| RichHF-18k         | NR   | 2024      | 包含18K图文对的多维度人类反馈数据 (CVPR 2024最佳论文) [5](@ref)                  |
-
-
-# IQA数据集分类整理
-
-## 一、IQA 核心数据集
-
-| 数据集名称         | 类型 | 发布时间 | 网址                                                                   | 图像数量     | 标注信息                     |
-|---------------------|------|----------|-------------------------------------------------------------------------|--------------|-----------------------------|
-| UHD-IQA            | 无参考 | 2024    | [项目页](https://database.mmsp-kn.de/uhd-iqa-benchmark-database.html)  | 6千 (4K)     | 每图20次主观评分            |
-| AGIQA-3k           | 无参考 | 2023    | [代码库](https://github.com/lcysyzxdxc/AGIQA-3k-Database)              | 3千          | 多维质量标注                |
-| SPAQ               | 无参考 | 2020    | [代码库](https://github.com/h4nwei/SPAQ)                                | 1.1万        | 智能手机摄影质量指标        |
-| KonIQ-10k          | 无参考 | 2020    | [项目页](http://database.mmsp-kn.de/koniq-3k-database.html)            | 1万          | 120万平均主观评分(MOS)      |
-| PIPAL              | 全参考 | 2020    | [项目页](https://www.jasongt.com/projectpages/pipal.html)              | 250参考图    | 113万成对比较数据           |
-| KADID-10k          | 全参考 | 2019    | [项目页](http://database.mmsp-kn.de/kadid-10k-database.html)           | 81参考图     | 1万种失真类型               |
-| LIVE IQA           | 全参考 | 2006    | [项目页](https://live.ece.utexas.edu/research/Quality/subjective.htm)  | 29参考图     | 780种合成失真               |
+## Full Reference (FR) Datasets
+| Dataset Name       | Type         | Published      | Website                                | Images                          | Annotations               | 
+|--------------------|--------------|----------------|---------------------------------------|---------------------------------|--------------------------|
+| **LIVE IQA**        | FR           | TIP 2006       | [Project](https://live.ece.utexas.edu/research/Quality/subjective.htm) | 29 pristine, 780 distortions | Human subjective scores   |
+| **TID2008**         | FR           | 2009           | [Project](http://www.ponomarenko.info/tid2008.htm)                    | 10 pristine, 185 distortions | 1700 distortions          |
+| **CSIQ**            | FR           | 2010           | [Project](http://vision.eng.shizuoka.ac.jp/mod/page/view.php?id=23)    | 30 pristine, 866 distortions | Human ratings              |
+| **TID2013**         | FR           | SP 2015        | [Project](http://www.ponomarenko.info/tid2013.htm)                     | 25 pristine, 3000 distortions | MOS/DMOS scores           |
+| **LIVEMD**          | FR           | ACSSC 2012     | [Project](https://live.ece.utexas.edu/research/Quality/live_multidistortedimage.html) | 15 pristine                  | Two successive distortions |
+| **MDID**            | FR           | PR 2017        | ---                                   | 20 pristine                     | 1600 distortions          |
+| **KADID-10k**       | FR           | QoMEX 2019     | [Project](http://database.mmsp-kn.de/kadid-10k-database.html)         | 81 pristine, 10k distortions | 30 ratings per image      |
+| **KADIS-700k**      | FR           | arXiv          | [Project](http://database.mmsp-kn.de/kadid-10k-database.html)         | 140k pristine, 700k distortions | 30 ratings per image      |
+| **Waterloo-Exp**    | FR           | TIP 2017       | [Project](https://ece.uwaterloo.ca/~k29ma/exploration/)                | 4744 pristine               | 94k distortions           |
+| **BAPPS(LPIPS)**    | FR           | CVPR 2018      | [Project](https://richzhang.github.io/PerceptualSimilarity/)            | 187.7k images               | 484k pairwise preferences  |
+| **PieAPP**          | FR           | CVPR 2018      | [Project](http://civc.ucsb.edu/graphics/Papers/CVPR2018_PieAPP/)       | 200 images                  | 2.3M pairwise preferences  |
+| **PIPAL**           | FR           | ECCV 2020      | [Project](https://www.jasongt.com/projectpages/pipal.html)             | 250 pristine                | 1.13M distortions         |
+| **A-DISTS**         | FR           | ACMM 2021      | [Project](https://github.com/dingkeyan93/A-DISTS)                       | ---                         | ---                        |
+| **DISTS**           | FR           | TPAMI 2021     | [Project](https://github.com/dingkeyan93/DISTS)                         | ---                         | ---                        |
+| **IQT**             | FR           | CVPRW 2021     | [Project](https://github.com/anse3832/IQT)                             | ---                         | Transformer-based          |
+| **JSPL**            | FR           | AAAI 2022      | [Project](https://github.com/happycaoyue/JSPL)                          | ---                         | Semi-supervised learning   |
+| **AHIQ**            | FR           | CVPR 2022      | [Project](https://github.com/IIGROUP/AHIQ)                              | ---                         | Attention/Transformer      |
 
 ---
 
-## 二、感知相似性数据集
+# IQA 数据集信息
+
+IQA分为全参考(full reference,FR)，半参考( reduced-reference,RR)，无参考(no-reference)。
+
+**全参考FR**：在FR问题中除了给出失真图像，还给出了无失真的参考图像。
+
+**半参考RR**：在RR问题中给出了失真图像，没有参考图像，但是给了参考图像的部分信息。至于是哪种信息取决于你的算法。RR算法在实时系统中很有用。
+
+**无参考NR**：在NR问题中仅给出了失真图像。NR是最难的图像质量评价方法。
 
 
-| 数据集名称         | 类型 | 发布时间 | 网址                                                                   | 图像数量     | 标注信息           |
-|---------------------|------|----------|-------------------------------------------------------------------------|--------------|-------------------|
-| BAPPS (LPIPS)      | 全参考 | 2018    | [项目页](https://richzhang.github.io/PerceptualSimilarity/)            | 18.77万      | 48.4万成对比较     |
-| PieAPP             | 全参考 | 2018    | [项目页](http://civc.ucsb.edu/graphics/Papers/CVPR2018_PieAPP/)        | 200参考图    | 230万排名数据      |
+## 无参考（NR）数据集
+| 数据集名称       | 类型           | 发表年份       | 官网链接                                | 图像数量                          | 标注信息               | 
+|------------------|----------------|----------------|-----------------------------------------|------------------------------------|-----------------------|
+| **BRISQUE**      | 无参考（NR）   | IEEE TIP 2012  | [项目链接](https://live.ece.utexas.edu/research/Quality/index_algorithms.htm) | 10,000张（来自YFCC100M） | 120万条评分               |
+| **IL-NIQE**      | 无参考（NR）   | IEEE TIP 2015  | [项目链接](http://www4.comp.polyu.edu.hk/~cslzhang/paper/IL-NIQE.pdf)     | 15张原始图像            | 传统特征方法              |
+| **FRIQUEE**      | 无参考（NR）   | JoV 2017       | [项目链接](https://live.ece.utexas.edu/research/Quality/index_algorithms.htm) | 14万张原始图像          | 特征包方法                |
+| **HIQA**         | 无参考（NR）   | IEEE CVPR 2018 | [项目链接](https://kwanyeelin.github.io/projects/HIQA/HIQA.html)          | 1万张退化图像            | 对抗学习生成参考          |
+| **LIVEMD**       | 无参考（NR）   | ACSSC 2012     | [项目链接](https://live.ece.utexas.edu/research/Quality/live_multidistortedimage.html) | 15张原始图像          | 双重退化序列              |
+| **ADB**          | 无参考美学（NR） | ECCV 2016     | [GitHub](https://github.com/aimerykong/deepImageAestheticsAnalysis)       | 1万张图像（8500/500/1000） | 11个美学属性             |
+| **AV**           | 无参考美学（NR） | CVPR 2012     | [项目链接](https://live.ece.utexas.edu/research/ChallengeDB/index.html)    | 25万张（60类）          | ---                       |
+| **CLIVE**        | 无参考（NR）   | TIP 2016       | [项目链接](https://live.ece.utexas.edu/research/ChallengeDB/index.html)    | 1200张图像              | 35万条评分                |
+| **KonIQ-10k**    | 无参考（NR）   | TIP 2020       | [项目链接](http://database.mmsp-kn.de/koniq-10k-database.html)           | 10,000张（来自YFCC100M） | 120万标注信息             |
+| **SPAQ**         | 无参考（NR）   | CVPR 2020      | [GitHub](https://github.com/h4nwei/SPAQ)                                | 1.1万张智能手机图像     | ---                       |
+| **PaQ-2-PiQ**    | 无参考（NR）   | CVPR 2020      | [GitHub](https://github.com/baidut/PaQ-2-PiQ)                           | 4万张图像，12万块补丁   | 400万条评分               |
+| **UHD-IQA**      | 无参考（NR）   | ECCVW 2024     | [项目链接](https://database.mmsp-kn.de/uhd-iqa-benchmark-database.html)  | 6000张（3840×2160）     | 每张20条评分              |
 
----
-
-## 三、医学影像数据集
-
-
-| 数据集名称         | 类型 | 发布时间 | 描述                                                                       |
-|---------------------|------|----------|-----------------------------------------------------------------------------|
-| FOCUS-MUSE DWI     | 无参考 | 2025    | 直肠癌MRI影像质量评估，含深度学习重建验证数据 [10](@ref)                         |
-
----
-
-## 四、其他专项数据集
-
-| 数据集名称         | 类型 | 发布时间 | 亮点                                                                       |
-|---------------------|------|----------|-----------------------------------------------------------------------------|
-| ESIQA              | 无参考 | 2024    | 针对苹果Vision Pro空间影像的感知质量评估 [13](@ref)                              |
-| RichHF-18k         | 无参考 | 2024    | 多维度人类反馈数据集，含18K图文对 (CVPR 2024最佳论文) [5](@ref)                 |
-
----
-
-### 引用说明
-[5](@ref): CVPR 2024最佳论文数据集  
-[10](@ref): 医学影像质量评估研究  
-[13](@ref): 空间影像质量评估新方法  
-
-[参考文档](https://github.com/chaofengc/Awesome-Image-Quality-Assessment)
-
-
-
+## 全参考（FR）数据集
+| 数据集名称       | 类型           | 发表年份       | 官网链接                                | 图像数量                          | 标注信息               | 
+|------------------|----------------|----------------|-----------------------------------------|------------------------------------|-----------------------|
+| **LIVE IQA**     | 全参考（FR）   | TIP 2006       | [项目链接](https://live.ece.utexas.edu/research/Quality/subjective.htm) | 29原始图像，780个退化版本 | 主观人类评分             |
+| **TID2008**      | 全参考（FR）   | 2009           | [项目链接](http://www.ponomarenko.info/tid2008.htm)                     | 10原始图像，185个退化版本 | 1700个退化图像           |
+| **CSIQ**         | 全参考（FR）   | 2010           | [项目链接](http://vision.eng.shizuoka.ac.jp/mod/page/view.php?id=23)     | 30原始图像，866个退化版本 | 人类评分                 |
+| **TID2013**      | 全参考（FR）   | SP 2015        | [项目链接](http://www.ponomarenko.info/tid2013.htm)                     | 25原始图像，3000个退化版本 | MOS/DMOS评分标准         |
+| **LIVEMD**       | 全参考（FR）   | ACSSC 2012     | [项目链接](https://live.ece.utexas.edu/research/Quality/live_multidistortedimage.html) | 15原始图像          | 双重退化序列              |
+| **MDID**         | 全参考（FR）   | PR 2017        | ---                                     | 20原始图像                        | 1600个退化版本         |
+| **KADID-10k**    | 全参考（FR）   | QoMEX 2019     | [项目链接](http://database.mmsp-kn.de/kadid-10k-database.html)         | 81原始图像，10,000个退化版本 | 每张30条评分            |
+| **KADIS-700k**   | 全参考（FR）   | arXiv          | [项目链接](http://database.mmsp-kn.de/kadid-10k-database.html)         | 14万原始图像，70万退化版本 | 每张30条评分            |
+| **Waterloo-Exp** | 全参考（FR）   | TIP 2017       | [项目链接](https://ece.uwaterloo.ca/~k29ma/exploration/)                | 4,744原始图像            | 94,000个退化版本         |
+| **BAPPS(LPIPS)** | 全参考（FR）   | CVPR 2018      | [项目链接](https://richzhang.github.io/PerceptualSimilarity/)           | 18.77万张图像            | 484,000对偏好标注        |
+| **PieAPP**       | 全参考（FR）   | CVPR 2018      | [项目链接](http://civc.ucsb.edu/graphics/Papers/CVPR2018_PieAPP/)       | 200张图像                | 230万对偏好标注          |
+| **PIPAL**        | 全参考（FR）   | ECCV 2020      | [项目链接](https://www.jasongt.com/projectpages/pipal.html)             | 250原始图像              | 113万退化版本            |
+| **A-DISTS**      | 全参考（FR）   | ACMM 2021      | [项目链接](https://github.com/dingkeyan93/A-DISTS)                       | ---                      | ---                       |
+| **DISTS**        | 全参考（FR）   | TPAMI 2021     | [项目链接](https://github.com/dingkeyan93/DISTS)                         | ---                      | ---                       |
+| **IQT**          | 全参考（FR）   | CVPRW 2021     | [项目链接](https://github.com/anse3832/IQT)                             | ---                      | Transformer架构          |
+| **JSPL**         | 全参考（FR）   | AAAI 2022      | [项目链接](https://github.com/happycaoyue/JSPL)                          | ---                      | 半监督学习与PU学习       |
+| **AHIQ**         | 全参考（FR）   | CVPR 2022      | [项目链接](https://github.com/IIGROUP/AHIQ)                              | ---                      | 注意力/Transformer       |
